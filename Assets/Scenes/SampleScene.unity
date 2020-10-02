@@ -487,6 +487,7 @@ MonoBehaviour:
   voxelGridPrefab: {fileID: 1130436963756487683, guid: c942018b4a83156428f1614e3d9325ef, type: 3}
   isoScale: 1
   showVoxel: 1
+  interpolate: 0
   voxelResolution:
     x: 20
     y: 20

@@ -15,6 +15,8 @@ public class VoxelGrid : MonoBehaviour
 
     public GameObject voxelPrefab;
 
+    public bool interpolate = true;
+
     [HideInInspector]
     public Voxel[] voxels;
 
@@ -329,8 +331,9 @@ public class VoxelGrid : MonoBehaviour
 
     Vector3 VertexInterp(float isolevel, Vector3 p1, Vector3 p2, float val1, float val2)
     {
+        if (!interpolate) return (p1 + p2) / 2;
         //return (p1 + p2) / 2;
- 
+
         if (Mathf.Abs(isolevel - val1) < 0.00001f) return p1;
         if (Mathf.Abs(isolevel - val2) < 0.00001f) return p2;
         if (Mathf.Abs(val2 - val1) < 0.00001f) return p1;

@@ -28,6 +28,8 @@ public class VoxelMap : MonoBehaviour
 
     private bool oldShowVoxel = false;
 
+    public bool interpolate = true;
+
     //private float chunkSize, voxelSize, halfSize;
 
     private Vector3 mapSize, chunkSize, halfMapSize;
@@ -143,6 +145,11 @@ public class VoxelMap : MonoBehaviour
                 chunks[i].isChanged = true;
             }
             oldShowVoxel = showVoxel;
+        }
+
+        for (int i = 0; i < chunks.Length; ++i)
+        {
+            chunks[i].interpolate = interpolate;
         }
     }
 
